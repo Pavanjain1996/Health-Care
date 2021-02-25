@@ -1,0 +1,23 @@
+<?php
+session_start();
+$H1=$_POST['H1'];
+$H2=$_POST['H2'];
+$H3=$_POST['H3'];
+$H4=$_POST['H4'];
+$H5=$_POST['H5'];
+$C1=$_POST['contact-1'];
+$C2=$_POST['contact-2'];
+$C3=$_POST['contact-3'];
+$C4=$_POST['contact-4'];
+$C5=$_POST['contact-4'];
+$A1=$_POST['add-1'];
+$A2=$_POST['add-2'];
+$A3=$_POST['add-3'];
+$A4=$_POST['add-4'];
+$A5=$_POST['add-5'];
+include('DBConnection.php');
+$query='insert into hospitaldata values ("'.$_SESSION['username'].'","'.$H1.'","'.$H2.'","'.$H3.'","'.$H4.'","'.$H5.'","'.$C1.'","'.$C2.'","'.$C3.'","'.$C4.'","'.$C5.'","'.$A1.'","'.$A2.'","'.$A3.'","'.$A4.'","'.$A5.'")';
+mysqli_query($con,$query);
+mysqli_close($con);
+header('location:Home.php');
+?>
